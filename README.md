@@ -2,6 +2,8 @@
 
 debugtrace add arguments information to backtrace.
 
+C level method, Proc not support.
+
 ## Installation
 
 ```

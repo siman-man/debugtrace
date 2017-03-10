@@ -38,6 +38,14 @@ RSpec.describe Debugtrace do
     end
   end
 
+  it 'class method' do
+    begin
+      B.class_hello('bbb')
+    rescue Exception
+      expect($@).to include(%r(`class_hello' {:arguments=>{:msg=>"bbb"}}))
+    end
+  end
+
   it 'simple test' do
     begin
       b.hello('update')

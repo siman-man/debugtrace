@@ -25,6 +25,10 @@ class B
   def hello(value)
     A.new.hello(value)
   end
+
+  def self.class_hello(msg)
+    raise
+  end
 end
 
 class C

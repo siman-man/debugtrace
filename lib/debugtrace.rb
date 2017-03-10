@@ -3,7 +3,7 @@ require 'debugtrace/version'
 module Debugtrace
   module BacktraceWithArguments
     def set_backtrace(errinfo)
-      debugtrace = backtrace_locations.zip(errinfo).map do |bl, msg|
+      debugtrace = errinfo.zip(backtrace_locations).map do |msg, bl|
         key = "#{bl.path}:#{bl.label}"
         [msg, Debugtrace.stack[key].pop].join(' ')
       end

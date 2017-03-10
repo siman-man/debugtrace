@@ -46,6 +46,14 @@ RSpec.describe Debugtrace do
     end
   end
 
+  it 'chain method' do
+    begin
+      b.m1
+    rescue Exception
+      expect($@).to include(%r(`m3' {:arguments=>{}}))
+    end
+  end
+
   it 'simple test' do
     begin
       b.hello('update')

@@ -29,6 +29,18 @@ class B
   def self.class_hello(msg)
     raise
   end
+
+  def m1
+    m2
+  end
+
+  def m2
+    m3
+  end
+
+  def m3
+    hogepiyo
+  end
 end
 
 class C

@@ -30,6 +30,14 @@ RSpec.describe Debugtrace do
     end
   end
 
+  it 'private method call' do
+    begin
+      a.call_private('call')
+    rescue Exception
+      expect($@).to include(%r(`pmethod' {:arguments=>{:value=>10}}))
+    end
+  end
+
   it 'simple test' do
     begin
       b.hello('update')

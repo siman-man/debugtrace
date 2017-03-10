@@ -10,6 +10,15 @@ class A
   def no_name_keyrest(**)
     raise Exception
   end
+
+  def call_private(msg)
+    pmethod(10)
+  end
+
+  private
+  def pmethod(value)
+    raise Exception
+  end
 end
 
 class B
